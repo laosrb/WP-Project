@@ -649,3 +649,234 @@ body {
         scroll-behavior: auto !important;
     }
 }
+
+/* Task 3: Shared responsive layout */
+.page-header h1 {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+}
+
+.page-header > p {
+    max-width: 650px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.scene-nav a {
+    min-height: 44px;
+    flex: 0 1 180px;
+}
+
+.scene-message {
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+.scene-message p:last-child {
+    max-width: 580px;
+    margin-right: auto;
+    margin-left: auto;
+    line-height: 1.5;
+}
+
+/* Phone layout */
+@media (max-width: 699px) {
+    .page-header {
+        padding: 18px 12px;
+    }
+
+    .page-header p {
+        margin-bottom: 14px;
+        font-size: 0.95rem;
+    }
+
+    .scene-nav {
+        gap: 8px;
+    }
+
+    .scene-nav a {
+        flex: 1 1 125px;
+        padding: 10px 8px;
+    }
+
+    .departure-sky,
+    .flight-sky,
+    .arrival-sky {
+        min-height: 720px;
+    }
+
+    .moon {
+        top: 42px;
+        right: 6%;
+        width: 78px;
+        height: 78px;
+    }
+
+    .full-moon {
+        width: 95px;
+        height: 95px;
+    }
+
+    .cloud {
+        width: 110px;
+        height: 28px;
+    }
+
+    .cloud-one {
+        top: 90px;
+        left: 3%;
+    }
+
+    .cloud-two {
+        top: 175px;
+        right: 8%;
+    }
+
+    .scene-message,
+    .departure-message,
+    .arrival-message {
+        width: 94%;
+        padding-top: 115px;
+    }
+
+    .scene-message h2 {
+        font-size: clamp(1.9rem, 9vw, 2.7rem);
+    }
+
+    .scene-message p:last-child {
+        font-size: 0.95rem;
+    }
+
+    .hill {
+        width: 90%;
+        height: 230px;
+    }
+
+    .departure-cottage {
+        bottom: 85px;
+        transform: scale(0.7);
+    }
+
+    .departure-tree {
+        bottom: 70px;
+        transform: scale(0.65);
+    }
+
+    .departure-characters {
+        right: 1%;
+        bottom: 82px;
+        transform: scale(0.68);
+    }
+
+    .haunted-house {
+        bottom: 78px;
+        transform: scale(0.68);
+    }
+
+    .arrival-group {
+        left: 28%;
+        bottom: 185px;
+        transform: scale(0.68);
+    }
+
+    .arrival-graveyard {
+        bottom: 70px;
+        transform: scale(0.58);
+    }
+}
+
+/* Extra adjustments for narrow phones */
+@media (max-width: 420px) {
+    .scene-nav a {
+        flex-basis: 100%;
+    }
+
+    .departure-sky,
+    .flight-sky,
+    .arrival-sky {
+        min-height: 760px;
+    }
+
+    .departure-cottage {
+        left: 0;
+        transform: scale(0.62);
+    }
+
+    .departure-tree {
+        transform: scale(0.58);
+    }
+
+    .departure-characters {
+        transform: scale(0.6);
+    }
+
+    .haunted-house {
+        left: 0;
+        transform: scale(0.6);
+    }
+
+    .arrival-group {
+        left: 20%;
+        bottom: 200px;
+        transform: scale(0.6);
+    }
+
+    .arrival-graveyard {
+        transform: scale(0.52);
+    }
+}
+
+/* Tablet layout */
+@media (min-width: 700px) and (max-width: 999px) {
+    .departure-sky,
+    .flight-sky,
+    .arrival-sky {
+        min-height: 700px;
+    }
+
+    .departure-cottage,
+    .departure-tree,
+    .departure-characters {
+        transform: scale(0.88);
+    }
+
+    .departure-cottage,
+    .departure-tree {
+        transform-origin: bottom center;
+    }
+
+    .departure-characters {
+        right: 12%;
+        transform-origin: bottom right;
+    }
+
+    .haunted-house {
+        left: 3%;
+        transform: scale(0.82);
+        transform-origin: bottom left;
+    }
+
+    .arrival-group {
+        left: 37%;
+        transform: scale(0.82);
+        transform-origin: bottom center;
+    }
+
+    .arrival-graveyard {
+        right: 1%;
+        transform: scale(0.75);
+        transform-origin: bottom right;
+    }
+}
+
+/* Desktop layout */
+@media (min-width: 1000px) {
+    .departure-sky,
+    .flight-sky,
+    .arrival-sky {
+        min-height: 680px;
+    }
+
+    .scene-message {
+        max-width: 650px;
+    }
+}
