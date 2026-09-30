@@ -176,14 +176,412 @@ body {
     background-color: var(--hill-front);
 }
 
-footer {
-    padding: 18px;
-    text-align: center;
-    background-color: var(--spider-black);
+/* Departure scene background */
+.departure-sky {
+    min-height: 680px;
+    background: linear-gradient(#241645, #553064 65%, #a54b45);
 }
 
-footer p {
-    margin: 0;
+.departure-stars span {
+    position: absolute;
+    color: var(--candle-glow);
+    font-size: 18px;
+}
+
+.departure-stars span:nth-child(1) {
+    top: 45px;
+    left: 12%;
+}
+
+.departure-stars span:nth-child(2) {
+    top: 110px;
+    left: 31%;
+}
+
+.departure-stars span:nth-child(3) {
+    top: 55px;
+    left: 52%;
+}
+
+.departure-stars span:nth-child(4) {
+    top: 150px;
+    left: 67%;
+}
+
+.departure-stars span:nth-child(5) {
+    top: 80px;
+    right: 5%;
+}
+
+.departure-message {
+    padding-top: 120px;
+}
+
+/* Small cottage beside the departure path */
+.departure-cottage {
+    position: absolute;
+    z-index: 2;
+    bottom: 90px;
+    left: 7%;
+    width: 150px;
+    height: 115px;
+    background-color: #4d2c32;
+    border: 3px solid var(--spider-black);
+}
+
+.cottage-roof {
+    position: absolute;
+    top: -55px;
+    left: -20px;
+    width: 0;
+    height: 0;
+    border-left: 95px solid transparent;
+    border-right: 95px solid transparent;
+    border-bottom: 60px solid #241421;
+}
+
+.cottage-window {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    width: 38px;
+    height: 38px;
+    background-color: var(--candle-glow);
+    border: 4px solid var(--spider-black);
+    box-shadow: 0 0 18px rgba(255, 214, 10, 0.7);
+}
+
+.cottage-door {
+    position: absolute;
+    right: 18px;
+    bottom: 0;
+    width: 42px;
+    height: 70px;
+    background-color: #241421;
+}
+
+/* Simple tree made with CSS shapes */
+.departure-tree {
+    position: absolute;
+    z-index: 2;
+    right: 7%;
+    bottom: 75px;
+    width: 125px;
+    height: 230px;
+}
+
+.tree-top {
+    position: absolute;
+    width: 125px;
+    height: 155px;
+    border-radius: 50%;
+    background-color: #15251b;
+}
+
+.tree-trunk {
+    position: absolute;
+    right: 47px;
+    bottom: 0;
+    width: 30px;
+    height: 105px;
+    background-color: #3a2421;
+}
+
+/* Characters and wagon waiting to begin the ride */
+.departure-characters {
+    position: absolute;
+    z-index: 4;
+    right: 23%;
+    bottom: 92px;
+    width: 300px;
+    height: 135px;
+}
+
+.waiting-witch {
+    position: absolute;
+    left: 0;
+    bottom: 32px;
+    font-size: 62px;
+}
+
+.waiting-broom {
+    position: absolute;
+    left: 24px;
+    bottom: 34px;
+    width: 92px;
+    height: 7px;
+    background-color: #8a5a2b;
+    transform: rotate(-14deg);
+}
+
+.waiting-broom::after {
+    content: "";
+    position: absolute;
+    right: -18px;
+    top: -10px;
+    width: 28px;
+    height: 25px;
+    background-color: #c8923e;
+    clip-path: polygon(0 35%, 100% 0, 100% 100%, 0 65%);
+}
+
+.hay-wagon {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    width: 155px;
+    height: 62px;
+    border: 4px solid #3a2421;
+    background-color: #9a5b27;
+}
+
+.wagon-riders {
+    position: absolute;
+    top: -47px;
+    left: 25px;
+    font-size: 34px;
+}
+
+.wagon-hay {
+    padding-top: 17px;
+    color: var(--candle-glow);
+    font-weight: bold;
+    text-align: center;
+}
+
+.wagon-wheel {
+    position: absolute;
+    bottom: -28px;
+    width: 42px;
+    height: 42px;
+    border: 6px solid #2b1a16;
+    border-radius: 50%;
+    background-color: #68401f;
+}
+
+.wheel-left {
+    left: 15px;
+}
+
+.wheel-right {
+    right: 15px;
+}
+
+.departure-lantern {
+    position: absolute;
+    right: -20px;
+    bottom: 65px;
+    width: 32px;
+    height: 40px;
+    padding-top: 7px;
+    border: 3px solid #402517;
+    border-radius: 6px;
+    background-color: var(--candle-glow);
+    color: var(--pumpkin);
+    text-align: center;
+    box-shadow: 0 0 20px var(--candle-glow);
+    animation: departure-glow 2s ease-in-out infinite;
+}
+
+/* The lantern gently changes brightness. */
+@keyframes departure-glow {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Haunted Arrival scene */
+.arrival-sky {
+    min-height: 680px;
+    background: linear-gradient(#150f35, #3c245d 68%, #72334e);
+}
+
+.arrival-stars span {
+    position: absolute;
+    color: var(--candle-glow);
+    font-size: 18px;
+}
+
+.arrival-stars span:nth-child(1) {
+    top: 55px;
+    left: 10%;
+}
+
+.arrival-stars span:nth-child(2) {
+    top: 125px;
+    left: 36%;
+}
+
+.arrival-stars span:nth-child(3) {
+    top: 75px;
+    right: 35%;
+}
+
+.arrival-stars span:nth-child(4) {
+    top: 145px;
+    right: 8%;
+}
+
+.arrival-message {
+    padding-top: 105px;
+}
+
+/* Simple haunted house made with CSS shapes */
+.haunted-house {
+    position: absolute;
+    z-index: 3;
+    bottom: 75px;
+    left: 8%;
+    width: 230px;
+    height: 190px;
+    border: 5px solid #17101f;
+    background-color: #382640;
+}
+
+.haunted-roof {
+    position: absolute;
+    top: -82px;
+    left: -30px;
+    width: 0;
+    height: 0;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-bottom: 88px solid #17101f;
+}
+
+.haunted-window {
+    position: absolute;
+    top: 35px;
+    width: 48px;
+    height: 55px;
+    border: 5px solid #17101f;
+    background-color: var(--candle-glow);
+    box-shadow: 0 0 16px rgba(255, 214, 10, 0.7);
+}
+
+.window-left {
+    left: 28px;
+}
+
+.window-right {
+    right: 28px;
+}
+
+.haunted-door {
+    position: absolute;
+    bottom: 0;
+    left: 88px;
+    width: 55px;
+    height: 85px;
+    border: 4px solid #17101f;
+    border-bottom: 0;
+    border-radius: 28px 28px 0 0;
+    background-color: #24152b;
+}
+
+.haunted-door::after {
+    content: "";
+    position: absolute;
+    top: 42px;
+    right: 8px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--candle-glow);
+}
+
+/* Gravestones and pumpkins decorate the yard */
+.arrival-graveyard {
+    position: absolute;
+    z-index: 4;
+    right: 7%;
+    bottom: 80px;
+    width: 280px;
+    height: 135px;
+}
+
+.gravestone {
+    position: absolute;
+    bottom: 0;
+    width: 70px;
+    height: 88px;
+    padding-top: 30px;
+    border-radius: 35px 35px 5px 5px;
+    background-color: #777184;
+    color: #282331;
+    font-weight: bold;
+    text-align: center;
+}
+
+.grave-one {
+    right: 20px;
+}
+
+.grave-two {
+    right: 105px;
+    height: 72px;
+}
+
+.arrival-pumpkins {
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    font-size: 34px;
+}
+
+/* Arriving travelers and their ghost host */
+.arrival-group {
+    position: absolute;
+    z-index: 5;
+    bottom: 80px;
+    left: 42%;
+    width: 260px;
+    height: 120px;
+}
+
+.arrived-witch {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 60px;
+}
+
+.arrived-riders {
+    position: absolute;
+    left: 85px;
+    bottom: 5px;
+    font-size: 42px;
+}
+
+.welcome-ghost {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 55px;
+    animation: ghost-float 3s ease-in-out infinite;
+}
+
+.arrival-ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 115px;
+    background-color: #171325;
+}
+
+/* The welcoming ghost slowly floats up and down. */
+@keyframes ghost-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
 }
 
 @media (min-width: 700px) {
@@ -194,6 +592,53 @@ footer p {
     .scene-message {
         padding-top: 185px;
     }
+
+    .departure-message {
+        padding-top: 90px;
+    }
+
+    .arrival-message {
+        padding-top: 80px;
+    }
+}
+
+/* Keep the departure scene readable on small screens. */
+@media (max-width: 699px) {
+    .departure-cottage {
+        left: 3%;
+        transform: scale(0.8);
+        transform-origin: bottom left;
+    }
+
+    .departure-tree {
+        right: 0;
+        transform: scale(0.75);
+        transform-origin: bottom right;
+    }
+
+    .departure-characters {
+        right: 5%;
+        transform: scale(0.78);
+        transform-origin: bottom right;
+    }
+
+    .haunted-house {
+        left: 2%;
+        transform: scale(0.72);
+        transform-origin: bottom left;
+    }
+
+    .arrival-group {
+        left: 30%;
+        transform: scale(0.75);
+        transform-origin: bottom center;
+    }
+
+    .arrival-graveyard {
+        right: 0;
+        transform: scale(0.65);
+        transform-origin: bottom right;
+    }
 }
 
 /* Limit movement for users who prefer reduced motion. */
@@ -202,5 +647,236 @@ footer p {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;
+    }
+}
+
+/* Task 3: Shared responsive layout */
+.page-header h1 {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+}
+
+.page-header > p {
+    max-width: 650px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.scene-nav a {
+    min-height: 44px;
+    flex: 0 1 180px;
+}
+
+.scene-message {
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+.scene-message p:last-child {
+    max-width: 580px;
+    margin-right: auto;
+    margin-left: auto;
+    line-height: 1.5;
+}
+
+/* Phone layout */
+@media (max-width: 699px) {
+    .page-header {
+        padding: 18px 12px;
+    }
+
+    .page-header p {
+        margin-bottom: 14px;
+        font-size: 0.95rem;
+    }
+
+    .scene-nav {
+        gap: 8px;
+    }
+
+    .scene-nav a {
+        flex: 1 1 125px;
+        padding: 10px 8px;
+    }
+
+    .departure-sky,
+    .flight-sky,
+    .arrival-sky {
+        min-height: 720px;
+    }
+
+    .moon {
+        top: 42px;
+        right: 6%;
+        width: 78px;
+        height: 78px;
+    }
+
+    .full-moon {
+        width: 95px;
+        height: 95px;
+    }
+
+    .cloud {
+        width: 110px;
+        height: 28px;
+    }
+
+    .cloud-one {
+        top: 90px;
+        left: 3%;
+    }
+
+    .cloud-two {
+        top: 175px;
+        right: 8%;
+    }
+
+    .scene-message,
+    .departure-message,
+    .arrival-message {
+        width: 94%;
+        padding-top: 115px;
+    }
+
+    .scene-message h2 {
+        font-size: clamp(1.9rem, 9vw, 2.7rem);
+    }
+
+    .scene-message p:last-child {
+        font-size: 0.95rem;
+    }
+
+    .hill {
+        width: 90%;
+        height: 230px;
+    }
+
+    .departure-cottage {
+        bottom: 85px;
+        transform: scale(0.7);
+    }
+
+    .departure-tree {
+        bottom: 70px;
+        transform: scale(0.65);
+    }
+
+    .departure-characters {
+        right: 1%;
+        bottom: 82px;
+        transform: scale(0.68);
+    }
+
+    .haunted-house {
+        bottom: 78px;
+        transform: scale(0.68);
+    }
+
+    .arrival-group {
+        left: 28%;
+        bottom: 185px;
+        transform: scale(0.68);
+    }
+
+    .arrival-graveyard {
+        bottom: 70px;
+        transform: scale(0.58);
+    }
+}
+
+/* Extra adjustments for narrow phones */
+@media (max-width: 420px) {
+    .scene-nav a {
+        flex-basis: 100%;
+    }
+
+    .departure-sky,
+    .flight-sky,
+    .arrival-sky {
+        min-height: 760px;
+    }
+
+    .departure-cottage {
+        left: 0;
+        transform: scale(0.62);
+    }
+
+    .departure-tree {
+        transform: scale(0.58);
+    }
+
+    .departure-characters {
+        transform: scale(0.6);
+    }
+
+    .haunted-house {
+        left: 0;
+        transform: scale(0.6);
+    }
+
+    .arrival-group {
+        left: 20%;
+        bottom: 200px;
+        transform: scale(0.6);
+    }
+
+    .arrival-graveyard {
+        transform: scale(0.52);
+    }
+}
+
+/* Tablet layout */
+@media (min-width: 700px) and (max-width: 999px) {
+    .departure-sky,
+    .flight-sky,
+    .arrival-sky {
+        min-height: 700px;
+    }
+
+    .departure-cottage,
+    .departure-tree,
+    .departure-characters {
+        transform: scale(0.88);
+    }
+
+    .departure-cottage,
+    .departure-tree {
+        transform-origin: bottom center;
+    }
+
+    .departure-characters {
+        right: 12%;
+        transform-origin: bottom right;
+    }
+
+    .haunted-house {
+        left: 3%;
+        transform: scale(0.82);
+        transform-origin: bottom left;
+    }
+
+    .arrival-group {
+        left: 37%;
+        transform: scale(0.82);
+        transform-origin: bottom center;
+    }
+
+    .arrival-graveyard {
+        right: 1%;
+        transform: scale(0.75);
+        transform-origin: bottom right;
+    }
+}
+
+/* Desktop layout */
+@media (min-width: 1000px) {
+    .departure-sky,
+    .flight-sky,
+    .arrival-sky {
+        min-height: 680px;
+    }
+
+    .scene-message {
+        max-width: 650px;
     }
 }

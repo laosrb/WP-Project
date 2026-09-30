@@ -20,16 +20,51 @@
 
     <main class="scenes">
         <section class="scene" id="departure">
-            <div class="sky">
+            <div class="sky departure-sky">
+                <!-- Dusk background decorations -->
+                <div class="departure-stars" aria-hidden="true">
+                    <span>✦</span>
+                    <span>✦</span>
+                    <span>✦</span>
+                    <span>✦</span>
+                    <span>✦</span>
+                </div>
                 <div class="moon" aria-hidden="true"></div>
                 <div class="cloud cloud-one" aria-hidden="true"></div>
                 <div class="cloud cloud-two" aria-hidden="true"></div>
 
-                <!-- Characters and animations can be added inside this area. -->
-                <div class="scene-message">
+                <!-- Chapter title and short story introduction -->
+                <div class="scene-message departure-message">
                     <p>Chapter 1</p>
                     <h2>Departure at Dusk</h2>
-                    <p>The riders prepare to leave before the moon reaches its highest point.</p>
+                    <p>The witch meets the riders beside an old cottage. Their lantern is lit, and the midnight journey is ready to begin.</p>
+                </div>
+
+                <!-- Cottage and tree create the starting location -->
+                <div class="departure-cottage" aria-hidden="true">
+                    <div class="cottage-roof"></div>
+                    <div class="cottage-window"></div>
+                    <div class="cottage-door"></div>
+                </div>
+
+                <div class="departure-tree" aria-hidden="true">
+                    <div class="tree-top"></div>
+                    <div class="tree-trunk"></div>
+                </div>
+
+                <!-- The witch and wagon show human activity before takeoff -->
+                <div class="departure-characters" aria-hidden="true">
+                    <div class="waiting-witch">🧙‍♀️</div>
+                    <div class="waiting-broom"></div>
+
+                    <div class="hay-wagon">
+                        <div class="wagon-riders">👋 🧑‍🌾</div>
+                        <div class="wagon-hay">HAY</div>
+                        <div class="wagon-wheel wheel-left"></div>
+                        <div class="wagon-wheel wheel-right"></div>
+                    </div>
+
+                    <div class="departure-lantern">✦</div>
                 </div>
 
                 <div class="hill hill-back" aria-hidden="true"></div>
@@ -57,25 +92,50 @@
 
         <section class="scene" id="arrival">
             <div class="sky arrival-sky">
+                <!-- Stars and clouds finish the nighttime journey -->
+                <div class="arrival-stars" aria-hidden="true">
+                    <span>✦</span>
+                    <span>✦</span>
+                    <span>✦</span>
+                    <span>✦</span>
+                </div>
                 <div class="moon small-moon" aria-hidden="true"></div>
                 <div class="cloud cloud-one" aria-hidden="true"></div>
                 <div class="cloud cloud-two" aria-hidden="true"></div>
 
-                <!-- Add the final destination and arrival action here. -->
-                <div class="scene-message">
+                <!-- Final chapter message -->
+                <div class="scene-message arrival-message">
                     <p>Chapter 3</p>
                     <h2>Haunted Arrival</h2>
-                    <p>The journey ends beyond the hills at a mysterious Halloween gathering.</p>
+                    <p>The riders land beside a glowing haunted house. Friendly ghosts and jack-o'-lanterns welcome them to the Halloween gathering.</p>
                 </div>
 
-                <div class="hill hill-back" aria-hidden="true"></div>
-                <div class="hill hill-front" aria-hidden="true"></div>
+                <!-- Haunted house is the final destination -->
+                <div class="haunted-house" aria-hidden="true">
+                    <div class="haunted-roof"></div>
+                    <div class="haunted-window window-left"></div>
+                    <div class="haunted-window window-right"></div>
+                    <div class="haunted-door"></div>
+                </div>
+
+                <!-- Graveyard details add to the Halloween setting -->
+                <div class="arrival-graveyard" aria-hidden="true">
+                    <div class="gravestone grave-one">RIP</div>
+                    <div class="gravestone grave-two">RIP</div>
+                    <div class="arrival-pumpkins">🎃 🎃 🎃</div>
+                </div>
+
+                <!-- The group has reached the gathering -->
+                <div class="arrival-group" aria-hidden="true">
+                    <span class="arrived-witch">🧙‍♀️</span>
+                    <span class="arrived-riders">👋 🧑‍🌾</span>
+                    <span class="welcome-ghost">👻</span>
+                </div>
+
+                <div class="arrival-ground" aria-hidden="true"></div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>The Haunted Harvest | HTML and CSS Only</p>
-    </footer>
 </body>
 </html>
