@@ -176,14 +176,222 @@ body {
     background-color: var(--hill-front);
 }
 
-footer {
-    padding: 18px;
-    text-align: center;
-    background-color: var(--spider-black);
+/* Departure scene background */
+.departure-sky {
+    min-height: 680px;
+    background: linear-gradient(#241645, #553064 65%, #a54b45);
 }
 
-footer p {
-    margin: 0;
+.departure-stars span {
+    position: absolute;
+    color: var(--candle-glow);
+    font-size: 18px;
+}
+
+.departure-stars span:nth-child(1) {
+    top: 45px;
+    left: 12%;
+}
+
+.departure-stars span:nth-child(2) {
+    top: 110px;
+    left: 31%;
+}
+
+.departure-stars span:nth-child(3) {
+    top: 55px;
+    left: 52%;
+}
+
+.departure-stars span:nth-child(4) {
+    top: 150px;
+    left: 67%;
+}
+
+.departure-stars span:nth-child(5) {
+    top: 80px;
+    right: 5%;
+}
+
+.departure-message {
+    padding-top: 120px;
+}
+
+/* Small cottage beside the departure path */
+.departure-cottage {
+    position: absolute;
+    z-index: 2;
+    bottom: 90px;
+    left: 7%;
+    width: 150px;
+    height: 115px;
+    background-color: #4d2c32;
+    border: 3px solid var(--spider-black);
+}
+
+.cottage-roof {
+    position: absolute;
+    top: -55px;
+    left: -20px;
+    width: 0;
+    height: 0;
+    border-left: 95px solid transparent;
+    border-right: 95px solid transparent;
+    border-bottom: 60px solid #241421;
+}
+
+.cottage-window {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    width: 38px;
+    height: 38px;
+    background-color: var(--candle-glow);
+    border: 4px solid var(--spider-black);
+    box-shadow: 0 0 18px rgba(255, 214, 10, 0.7);
+}
+
+.cottage-door {
+    position: absolute;
+    right: 18px;
+    bottom: 0;
+    width: 42px;
+    height: 70px;
+    background-color: #241421;
+}
+
+/* Simple tree made with CSS shapes */
+.departure-tree {
+    position: absolute;
+    z-index: 2;
+    right: 7%;
+    bottom: 75px;
+    width: 125px;
+    height: 230px;
+}
+
+.tree-top {
+    position: absolute;
+    width: 125px;
+    height: 155px;
+    border-radius: 50%;
+    background-color: #15251b;
+}
+
+.tree-trunk {
+    position: absolute;
+    right: 47px;
+    bottom: 0;
+    width: 30px;
+    height: 105px;
+    background-color: #3a2421;
+}
+
+/* Characters and wagon waiting to begin the ride */
+.departure-characters {
+    position: absolute;
+    z-index: 4;
+    right: 23%;
+    bottom: 92px;
+    width: 300px;
+    height: 135px;
+}
+
+.waiting-witch {
+    position: absolute;
+    left: 0;
+    bottom: 32px;
+    font-size: 62px;
+}
+
+.waiting-broom {
+    position: absolute;
+    left: 24px;
+    bottom: 34px;
+    width: 92px;
+    height: 7px;
+    background-color: #8a5a2b;
+    transform: rotate(-14deg);
+}
+
+.waiting-broom::after {
+    content: "";
+    position: absolute;
+    right: -18px;
+    top: -10px;
+    width: 28px;
+    height: 25px;
+    background-color: #c8923e;
+    clip-path: polygon(0 35%, 100% 0, 100% 100%, 0 65%);
+}
+
+.hay-wagon {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    width: 155px;
+    height: 62px;
+    border: 4px solid #3a2421;
+    background-color: #9a5b27;
+}
+
+.wagon-riders {
+    position: absolute;
+    top: -47px;
+    left: 25px;
+    font-size: 34px;
+}
+
+.wagon-hay {
+    padding-top: 17px;
+    color: var(--candle-glow);
+    font-weight: bold;
+    text-align: center;
+}
+
+.wagon-wheel {
+    position: absolute;
+    bottom: -28px;
+    width: 42px;
+    height: 42px;
+    border: 6px solid #2b1a16;
+    border-radius: 50%;
+    background-color: #68401f;
+}
+
+.wheel-left {
+    left: 15px;
+}
+
+.wheel-right {
+    right: 15px;
+}
+
+.departure-lantern {
+    position: absolute;
+    right: -20px;
+    bottom: 65px;
+    width: 32px;
+    height: 40px;
+    padding-top: 7px;
+    border: 3px solid #402517;
+    border-radius: 6px;
+    background-color: var(--candle-glow);
+    color: var(--pumpkin);
+    text-align: center;
+    box-shadow: 0 0 20px var(--candle-glow);
+    animation: departure-glow 2s ease-in-out infinite;
+}
+
+/* The lantern gently changes brightness. */
+@keyframes departure-glow {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
 }
 
 @media (min-width: 700px) {
@@ -193,6 +401,31 @@ footer p {
 
     .scene-message {
         padding-top: 185px;
+    }
+
+    .departure-message {
+        padding-top: 90px;
+    }
+}
+
+/* Keep the departure scene readable on small screens. */
+@media (max-width: 699px) {
+    .departure-cottage {
+        left: 3%;
+        transform: scale(0.8);
+        transform-origin: bottom left;
+    }
+
+    .departure-tree {
+        right: 0;
+        transform: scale(0.75);
+        transform-origin: bottom right;
+    }
+
+    .departure-characters {
+        right: 5%;
+        transform: scale(0.78);
+        transform-origin: bottom right;
     }
 }
 
