@@ -1,0 +1,206 @@
+/* Halloween color palette */
+:root {
+    --pumpkin: #ff7518;
+    --candy-purple: #5a189a;
+    --spider-black: #1a1423;
+    --slime-green: #8ac926;
+    --ghost-white: #f6f2f8;
+    --candle-glow: #ffd60a;
+    --night-blue: #151a3a;
+    --hill-back: #30234f;
+    --hill-front: #171325;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--spider-black);
+    color: var(--ghost-white);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.page-header {
+    padding: 24px 16px;
+    text-align: center;
+    background-color: var(--spider-black);
+    border-bottom: 3px solid var(--pumpkin);
+}
+
+.page-header h1 {
+    margin: 0 0 8px;
+    color: var(--pumpkin);
+}
+
+.page-header p {
+    margin: 0 0 20px;
+}
+
+.scene-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.scene-nav a {
+    padding: 10px 14px;
+    border: 2px solid var(--pumpkin);
+    border-radius: 6px;
+    color: var(--ghost-white);
+    text-decoration: none;
+}
+
+.scene-nav a:hover,
+.scene-nav a:focus {
+    background-color: var(--pumpkin);
+    color: var(--spider-black);
+}
+
+.scene-nav a:focus-visible {
+    outline: 3px solid var(--candle-glow);
+    outline-offset: 3px;
+}
+
+/* CSS-only scene switching from the assignment starter code */
+.scene {
+    display: none;
+}
+
+.scenes:not(:has(.scene:target)) .scene:first-child {
+    display: block;
+}
+
+.scene:target {
+    display: block;
+}
+
+.sky {
+    position: relative;
+    min-height: 65vh;
+    overflow: hidden;
+    background: linear-gradient(#241645, var(--night-blue) 65%, #3f285f);
+}
+
+.flight-sky {
+    background: linear-gradient(#0b102b, #25194b 70%, #4a2b63);
+}
+
+.arrival-sky {
+    background: linear-gradient(#30184f, #a13e42 70%, var(--pumpkin));
+}
+
+.moon {
+    position: absolute;
+    top: 55px;
+    right: 12%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--candle-glow);
+    box-shadow: 0 0 30px rgba(255, 214, 10, 0.65);
+}
+
+.full-moon {
+    width: 125px;
+    height: 125px;
+}
+
+.small-moon {
+    width: 75px;
+    height: 75px;
+}
+
+.cloud {
+    position: absolute;
+    width: 150px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: rgba(246, 242, 248, 0.22);
+}
+
+.cloud-one {
+    top: 105px;
+    left: 8%;
+}
+
+.cloud-two {
+    top: 190px;
+    right: 22%;
+}
+
+.scene-message {
+    position: relative;
+    z-index: 4;
+    width: min(520px, 86%);
+    margin: 0 auto;
+    padding-top: 165px;
+    text-align: center;
+    text-shadow: 2px 2px 3px var(--spider-black);
+}
+
+.scene-message p:first-child {
+    margin-bottom: 4px;
+    color: var(--candle-glow);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.scene-message h2 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 7vw, 3.5rem);
+}
+
+.hill {
+    position: absolute;
+    bottom: -100px;
+    width: 75%;
+    height: 260px;
+    border-radius: 50% 50% 0 0;
+}
+
+.hill-back {
+    left: -15%;
+    background-color: var(--hill-back);
+}
+
+.hill-front {
+    right: -20%;
+    bottom: -125px;
+    background-color: var(--hill-front);
+}
+
+footer {
+    padding: 18px;
+    text-align: center;
+    background-color: var(--spider-black);
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (min-width: 700px) {
+    .page-header {
+        padding: 30px 20px;
+    }
+
+    .scene-message {
+        padding-top: 185px;
+    }
+}
+
+/* Limit movement for users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
