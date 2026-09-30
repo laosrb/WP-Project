@@ -1,14 +1,6 @@
 # Midnight Broomstick Ride
 
-Darsh and Ryan's Haunted Harvest project.
-
-## Environment Features
-
-- Witch riding a trotting broomstick
-- Couple inside a hay wagon waving
-- Trees and clouds slowly moving
-- Owls flying along the scene
-- Sparks appear in the broomstick trail
+Darsh and Ryan's Haunted Harvest project using Option 5 from the assignment.
 
 ## Scene Plan
 
