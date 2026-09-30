@@ -394,6 +394,196 @@ body {
     }
 }
 
+/* Haunted Arrival scene */
+.arrival-sky {
+    min-height: 680px;
+    background: linear-gradient(#150f35, #3c245d 68%, #72334e);
+}
+
+.arrival-stars span {
+    position: absolute;
+    color: var(--candle-glow);
+    font-size: 18px;
+}
+
+.arrival-stars span:nth-child(1) {
+    top: 55px;
+    left: 10%;
+}
+
+.arrival-stars span:nth-child(2) {
+    top: 125px;
+    left: 36%;
+}
+
+.arrival-stars span:nth-child(3) {
+    top: 75px;
+    right: 35%;
+}
+
+.arrival-stars span:nth-child(4) {
+    top: 145px;
+    right: 8%;
+}
+
+.arrival-message {
+    padding-top: 105px;
+}
+
+/* Simple haunted house made with CSS shapes */
+.haunted-house {
+    position: absolute;
+    z-index: 3;
+    bottom: 75px;
+    left: 8%;
+    width: 230px;
+    height: 190px;
+    border: 5px solid #17101f;
+    background-color: #382640;
+}
+
+.haunted-roof {
+    position: absolute;
+    top: -82px;
+    left: -30px;
+    width: 0;
+    height: 0;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-bottom: 88px solid #17101f;
+}
+
+.haunted-window {
+    position: absolute;
+    top: 35px;
+    width: 48px;
+    height: 55px;
+    border: 5px solid #17101f;
+    background-color: var(--candle-glow);
+    box-shadow: 0 0 16px rgba(255, 214, 10, 0.7);
+}
+
+.window-left {
+    left: 28px;
+}
+
+.window-right {
+    right: 28px;
+}
+
+.haunted-door {
+    position: absolute;
+    bottom: 0;
+    left: 88px;
+    width: 55px;
+    height: 85px;
+    border: 4px solid #17101f;
+    border-bottom: 0;
+    border-radius: 28px 28px 0 0;
+    background-color: #24152b;
+}
+
+.haunted-door::after {
+    content: "";
+    position: absolute;
+    top: 42px;
+    right: 8px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--candle-glow);
+}
+
+/* Gravestones and pumpkins decorate the yard */
+.arrival-graveyard {
+    position: absolute;
+    z-index: 4;
+    right: 7%;
+    bottom: 80px;
+    width: 280px;
+    height: 135px;
+}
+
+.gravestone {
+    position: absolute;
+    bottom: 0;
+    width: 70px;
+    height: 88px;
+    padding-top: 30px;
+    border-radius: 35px 35px 5px 5px;
+    background-color: #777184;
+    color: #282331;
+    font-weight: bold;
+    text-align: center;
+}
+
+.grave-one {
+    right: 20px;
+}
+
+.grave-two {
+    right: 105px;
+    height: 72px;
+}
+
+.arrival-pumpkins {
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    font-size: 34px;
+}
+
+/* Arriving travelers and their ghost host */
+.arrival-group {
+    position: absolute;
+    z-index: 5;
+    bottom: 80px;
+    left: 42%;
+    width: 260px;
+    height: 120px;
+}
+
+.arrived-witch {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 60px;
+}
+
+.arrived-riders {
+    position: absolute;
+    left: 85px;
+    bottom: 5px;
+    font-size: 42px;
+}
+
+.welcome-ghost {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 55px;
+    animation: ghost-float 3s ease-in-out infinite;
+}
+
+.arrival-ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 115px;
+    background-color: #171325;
+}
+
+/* The welcoming ghost slowly floats up and down. */
+@keyframes ghost-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
 @media (min-width: 700px) {
     .page-header {
         padding: 30px 20px;
@@ -405,6 +595,10 @@ body {
 
     .departure-message {
         padding-top: 90px;
+    }
+
+    .arrival-message {
+        padding-top: 80px;
     }
 }
 
@@ -425,6 +619,24 @@ body {
     .departure-characters {
         right: 5%;
         transform: scale(0.78);
+        transform-origin: bottom right;
+    }
+
+    .haunted-house {
+        left: 2%;
+        transform: scale(0.72);
+        transform-origin: bottom left;
+    }
+
+    .arrival-group {
+        left: 30%;
+        transform: scale(0.75);
+        transform-origin: bottom center;
+    }
+
+    .arrival-graveyard {
+        right: 0;
+        transform: scale(0.65);
         transform-origin: bottom right;
     }
 }
