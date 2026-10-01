@@ -1242,3 +1242,77 @@ body {
         font-size: 65px;
     }
 }
+
+/* Ryan: Navigation and scene interactions. */
+
+/* Ryan: Navigation buttons respond to mouse and keyboard use. */
+.scene-nav a {
+    transition: background-color 0.25s ease,
+                color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.scene-nav a:hover {
+    transform: translateY(-3px);
+}
+
+.scene-nav a:focus-visible {
+    outline: 3px solid var(--candle-glow);
+    outline-offset: 4px;
+}
+
+/* Ryan: Shows which chapter is currently open. */
+body:not(:has(.scene:target)) .scene-nav a[href="#departure"],
+body:has(#departure:target) .scene-nav a[href="#departure"],
+body:has(#flight:target) .scene-nav a[href="#flight"],
+body:has(#arrival:target) .scene-nav a[href="#arrival"] {
+    background-color: var(--pumpkin);
+    color: var(--spider-black);
+}
+
+/* Ryan: Continue button at the bottom of the Flight scene. */
+.next-scene-link {
+    position: absolute;
+    z-index: 8;
+    bottom: 22px;
+    left: 50%;
+    min-height: 44px;
+    padding: 12px 18px;
+    border: 2px solid var(--candle-glow);
+    border-radius: 6px;
+    background-color: var(--spider-black);
+    color: var(--ghost-white);
+    text-decoration: none;
+    transform: translateX(-50%);
+    transition: background-color 0.25s ease,
+                color 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.next-scene-link:hover,
+.next-scene-link:focus {
+    background-color: var(--candle-glow);
+    color: var(--spider-black);
+    box-shadow: 0 0 18px var(--candle-glow);
+}
+
+.next-scene-link:focus-visible {
+    outline: 3px solid var(--ghost-white);
+    outline-offset: 4px;
+}
+
+/* Ryan: Small visual reactions inside the Flight scene. */
+.flight-witch:hover .witch-character,
+.flight-wagon:hover,
+.flight-owl:hover {
+    filter: drop-shadow(0 0 10px var(--candle-glow));
+}
+
+/* Ryan: Keeps the Continue button readable on phones. */
+@media (max-width: 699px) {
+    .next-scene-link {
+        bottom: 16px;
+        width: 82%;
+        text-align: center;
+    }
+}
