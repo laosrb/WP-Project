@@ -22,4 +22,4 @@ The project uses only HTML and CSS. Do not add JavaScript.
 
 - GitHub repository: https://github.com/laosrb/WP-Project
 - Contribution history: https://github.com/laosrb/WP-Project/commits/main/
-- Codd deployment target: https://codd.cs.gsu.edu/~drathi1/inclass_6/
+- Codd deployment: https://codd.cs.gsu.edu/~drathi1/web/INC/INC6/index.html
