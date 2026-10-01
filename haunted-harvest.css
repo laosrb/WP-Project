@@ -1064,3 +1064,34 @@ body {
         right: 0;
     }
 }
+
+/* Ryan: Witch and wagon movement. */
+.flight-witch {
+    animation: witch-flight 6s ease-in-out infinite;
+}
+
+.flight-wagon {
+    animation: wagon-flight 7s ease-in-out infinite;
+}
+
+/* Ryan: The witch gently moves through the sky. */
+@keyframes witch-flight {
+    0%, 100% {
+        transform: translate(0, 0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translate(45px, -24px) rotate(2deg);
+    }
+}
+
+/* Ryan: The wagon follows with a slower floating motion. */
+@keyframes wagon-flight {
+    0%, 100% {
+        transform: translate(0, 0) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-35px, -18px) rotate(-2deg);
+    }
+}
