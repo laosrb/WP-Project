@@ -1,0 +1,14 @@
+Submit index.html with semantic and accessible HTML5 markup.
+Submit haunted-harvest.css with all custom styles and palette variables.
+Submit the complete assets folder, including its images and fonts folders.
+Submit submission_Template_halloween.html with the team and project details.
+Include the GitHub repository URL for the project.
+Include the GitHub username of every team member.
+Include contribution evidence through commits, branches, merges, or documented task assignments.
+Use only HTML and CSS with no JavaScript in the student project.
+Include at least three CSS-only chapters that users can navigate between.
+Include human activity, animals, weather, realistic movement, a moving vehicle or object, and a Halloween theme.
+Verify responsive layouts, keyboard focus, readable contrast, and reduced-motion support.
+Deploy the complete project to https://codd.cs.gsu.edu/~drathi1/inclass_6/.
+Test every local link and asset after deployment.
+Submit the project before the deadline announced by the instructor.
