@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A CSS-only Halloween journey through three animated scenes.">
     <title>Midnight Broomstick Ride</title>
     <link rel="stylesheet" href="haunted-harvest.css">
 </head>
 <body>
+    <!-- Darsh: Skip link helps keyboard users reach the story quickly. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <header class="page-header">
         <h1>Midnight Broomstick Ride</h1>
         <p>Follow a witch and a hay wagon on a Halloween journey.</p>
@@ -16,10 +20,14 @@
             <a href="#flight">Midnight Flight</a>
             <a href="#arrival">Haunted Arrival</a>
         </nav>
+
+        <a class="project-details-link" href="submission_Template_halloween.html">
+            View Submission Details
+        </a>
     </header>
 
-    <main class="scenes">
-        <section class="scene" id="departure">
+    <main class="scenes" id="main-content">
+        <section class="scene" id="departure" aria-labelledby="departure-title">
             <div class="sky departure-sky">
                 <!-- Dusk background decorations -->
                 <div class="departure-stars" aria-hidden="true">
@@ -36,7 +44,7 @@
                 <!-- Chapter title and short story introduction -->
                 <div class="scene-message departure-message">
                     <p>Chapter 1</p>
-                    <h2>Departure at Dusk</h2>
+                    <h2 id="departure-title">Departure at Dusk</h2>
                     <p>The witch meets the riders beside an old cottage. Their lantern is lit, and the midnight journey is ready to begin.</p>
                 </div>
 
@@ -72,7 +80,7 @@
             </div>
         </section>
 
-        <section class="scene" id="flight">
+        <section class="scene" id="flight" aria-labelledby="flight-title">
             <div class="sky flight-sky">
                 <!-- Ryan: Stars, moon, and clouds create the midnight background. -->
                 <div class="flight-stars" aria-hidden="true">
@@ -90,7 +98,7 @@
                 <!-- Ryan: Chapter title and story description. -->
                 <div class="scene-message flight-message">
                     <p>Chapter 2</p>
-                    <h2>Across the Midnight Sky</h2>
+                    <h2 id="flight-title">Across the Midnight Sky</h2>
                     <p>The witch guides the waving riders through the clouds while owls follow their journey.</p>
                 </div>
 
@@ -139,7 +147,7 @@
             </div>
         </section>
 
-        <section class="scene" id="arrival">
+        <section class="scene" id="arrival" aria-labelledby="arrival-title">
             <div class="sky arrival-sky">
                 <!-- Stars and clouds finish the nighttime journey -->
                 <div class="arrival-stars" aria-hidden="true">
@@ -155,7 +163,7 @@
                 <!-- Final chapter message -->
                 <div class="scene-message arrival-message">
                     <p>Chapter 3</p>
-                    <h2>Haunted Arrival</h2>
+                    <h2 id="arrival-title">Haunted Arrival</h2>
                     <p>The riders land beside a glowing haunted house. Friendly ghosts and jack-o'-lanterns welcome them to the Halloween gathering.</p>
                 </div>
 

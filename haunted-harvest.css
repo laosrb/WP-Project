@@ -643,10 +643,13 @@ body {
 
 /* Limit movement for users who prefer reduced motion. */
 @media (prefers-reduced-motion: reduce) {
-    * {
+    *,
+    *::before,
+    *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }
 
@@ -1314,5 +1317,189 @@ body:has(#arrival:target) .scene-nav a[href="#arrival"] {
         bottom: 16px;
         width: 82%;
         text-align: center;
+    }
+}
+
+/* Darsh: Final accessibility and submission styles. */
+.skip-link {
+    position: absolute;
+    z-index: 20;
+    top: -60px;
+    left: 12px;
+    padding: 10px 14px;
+    border: 3px solid var(--candle-glow);
+    border-radius: 5px;
+    background-color: var(--spider-black);
+    color: var(--ghost-white);
+}
+
+.skip-link:focus {
+    top: 12px;
+}
+
+.project-details-link {
+    display: inline-block;
+    min-height: 44px;
+    margin-top: 14px;
+    padding: 11px 16px;
+    border: 2px solid var(--slime-green);
+    border-radius: 6px;
+    color: var(--ghost-white);
+    text-decoration: none;
+}
+
+.project-details-link:hover,
+.project-details-link:focus {
+    background-color: var(--slime-green);
+    color: var(--spider-black);
+}
+
+.project-details-link:focus-visible {
+    outline: 3px solid var(--candle-glow);
+    outline-offset: 4px;
+}
+
+/* Darsh: Submission page layout. */
+.submission-main {
+    width: min(920px, 92%);
+    margin: 30px auto;
+}
+
+.submission-card {
+    margin-bottom: 24px;
+    padding: 24px;
+    border: 2px solid var(--candy-purple);
+    border-radius: 10px;
+    background-color: #251d32;
+}
+
+.submission-card h2 {
+    margin-top: 0;
+    color: var(--pumpkin);
+}
+
+.submission-card h3 {
+    color: var(--candle-glow);
+}
+
+.submission-card a {
+    color: var(--candle-glow);
+}
+
+.submission-card a:hover,
+.submission-card a:focus {
+    color: var(--ghost-white);
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.submission-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.submission-table th,
+.submission-table td {
+    padding: 12px;
+    border: 1px solid #81758f;
+    text-align: left;
+    vertical-align: top;
+}
+
+.submission-table th {
+    background-color: #3a294d;
+    color: var(--candle-glow);
+}
+
+.submission-checklist {
+    padding-left: 22px;
+    line-height: 1.7;
+}
+
+.submission-note {
+    padding: 12px;
+    border-left: 5px solid var(--pumpkin);
+    background-color: #30253d;
+}
+
+.submission-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.submission-actions a {
+    min-height: 44px;
+    padding: 11px 16px;
+    border: 2px solid var(--pumpkin);
+    border-radius: 6px;
+    color: var(--ghost-white);
+    text-decoration: none;
+}
+
+.submission-actions a:hover,
+.submission-actions a:focus {
+    background-color: var(--pumpkin);
+    color: var(--spider-black);
+}
+
+.submission-actions a:focus-visible {
+    outline: 3px solid var(--candle-glow);
+    outline-offset: 4px;
+}
+
+/* Darsh: Submission tables stack into labeled blocks on phones. */
+@media (max-width: 600px) {
+    .submission-card {
+        padding: 18px;
+    }
+
+    .submission-table,
+    .submission-table thead,
+    .submission-table tbody,
+    .submission-table tr,
+    .submission-table th,
+    .submission-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .submission-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+    }
+
+    .submission-table tr {
+        margin-bottom: 16px;
+        border: 1px solid #81758f;
+    }
+
+    .submission-table td {
+        border: 0;
+        border-bottom: 1px solid #554a61;
+    }
+
+    .submission-table td::before {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--candle-glow);
+        font-weight: bold;
+        content: attr(data-label);
+    }
+}
+
+/* Darsh: Keeps focus indicators visible in high-contrast mode. */
+@media (forced-colors: active) {
+    .scene-nav a,
+    .next-scene-link,
+    .project-details-link,
+    .submission-actions a {
+        border: 2px solid ButtonText;
     }
 }
