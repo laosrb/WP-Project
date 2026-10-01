@@ -74,19 +74,68 @@
 
         <section class="scene" id="flight">
             <div class="sky flight-sky">
+                <!-- Ryan: Stars, moon, and clouds create the midnight background. -->
+                <div class="flight-stars" aria-hidden="true">
+                    <span>✦</span>
+                    <span>✦</span>
+                    <span>✦</span>
+                    <span>✦</span>
+                    <span>✦</span>
+                </div>
+
                 <div class="moon full-moon" aria-hidden="true"></div>
                 <div class="cloud cloud-one" aria-hidden="true"></div>
                 <div class="cloud cloud-two" aria-hidden="true"></div>
 
-                <!-- Add the witch, owls, sparks, and hay wagon here. -->
-                <div class="scene-message">
+                <!-- Ryan: Chapter title and story description. -->
+                <div class="scene-message flight-message">
                     <p>Chapter 2</p>
                     <h2>Across the Midnight Sky</h2>
-                    <p>The travelers move through the clouds under a glowing full moon.</p>
+                    <p>The witch guides the waving riders through the clouds while owls follow their journey.</p>
                 </div>
 
+                <!-- Ryan: Main characters and moving vehicle. -->
+                <div class="flight-action" aria-hidden="true">
+                    <div class="flight-witch">
+                        <span class="witch-character">🧙‍♀️</span>
+                        <span class="witch-broom"></span>
+                    </div>
+
+                    <div class="flight-wagon">
+                        <div class="flight-riders">👋 🧑‍🌾</div>
+                        <div class="flight-wagon-body">HAY</div>
+                        <div class="flight-wheel flight-wheel-left"></div>
+                        <div class="flight-wheel flight-wheel-right"></div>
+                    </div>
+
+                    <!-- Ryan: Owls will receive movement in the environment task. -->
+                    <span class="flight-owl owl-one">🦉</span>
+                    <span class="flight-owl owl-two">🦉</span>
+
+                    <!-- Ryan: Sparks will receive movement in the environment task. -->
+                    <div class="flight-sparks">
+                        <span>✦</span>
+                        <span>✦</span>
+                        <span>✦</span>
+                    </div>
+                </div>
+
+                <!-- Ryan: Trees move below the travelers to show forward motion. -->
+                <div class="flight-trees" aria-hidden="true">
+                    <span class="flight-tree tree-one">🌲</span>
+                    <span class="flight-tree tree-two">🌲</span>
+                    <span class="flight-tree tree-three">🌲</span>
+                    <span class="flight-tree tree-four">🌲</span>
+                </div>
+
+                <!-- Ryan: Hills create depth below the flying characters. -->
                 <div class="hill hill-back" aria-hidden="true"></div>
                 <div class="hill hill-front" aria-hidden="true"></div>
+
+                <!-- Ryan: CSS-only link continues the story to the final chapter. -->
+                <a class="next-scene-link" href="#arrival">
+                    Continue to Haunted Arrival
+                </a>
             </div>
         </section>
 

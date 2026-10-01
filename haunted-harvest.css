@@ -880,3 +880,439 @@ body {
         max-width: 650px;
     }
 }
+
+/* Ryan: Midnight Flight scene. */
+.flight-sky {
+    min-height: 680px;
+    background: linear-gradient(#080d27, #25194b 68%, #4a2b63);
+}
+
+.flight-stars span {
+    position: absolute;
+    color: var(--candle-glow);
+    font-size: 18px;
+}
+
+.flight-stars span:nth-child(1) {
+    top: 50px;
+    left: 8%;
+}
+
+.flight-stars span:nth-child(2) {
+    top: 125px;
+    left: 26%;
+}
+
+.flight-stars span:nth-child(3) {
+    top: 70px;
+    left: 48%;
+}
+
+.flight-stars span:nth-child(4) {
+    top: 150px;
+    right: 28%;
+}
+
+.flight-stars span:nth-child(5) {
+    top: 85px;
+    right: 7%;
+}
+
+.flight-message {
+    padding-top: 100px;
+}
+
+/* Ryan: Holds the witch, wagon, owls, and sparks. */
+.flight-action {
+    position: absolute;
+    z-index: 5;
+    right: 8%;
+    bottom: 145px;
+    width: 700px;
+    max-width: 85%;
+    height: 210px;
+}
+
+/* Ryan: Witch and broom. */
+.flight-witch {
+    position: absolute;
+    top: 20px;
+    left: 5%;
+    width: 175px;
+    height: 90px;
+}
+
+.witch-character {
+    position: absolute;
+    left: 30px;
+    bottom: 14px;
+    font-size: 70px;
+}
+
+.witch-broom {
+    position: absolute;
+    left: 10px;
+    bottom: 18px;
+    width: 145px;
+    height: 8px;
+    background-color: #8a5a2b;
+    transform: rotate(-8deg);
+}
+
+.witch-broom::after {
+    content: "";
+    position: absolute;
+    right: -25px;
+    top: -12px;
+    width: 38px;
+    height: 30px;
+    background-color: #c8923e;
+    clip-path: polygon(0 35%, 100% 0, 100% 100%, 0 65%);
+}
+
+/* Ryan: Flying hay wagon and riders. */
+.flight-wagon {
+    position: absolute;
+    right: 5%;
+    bottom: 18px;
+    width: 190px;
+    height: 80px;
+}
+
+.flight-riders {
+    position: absolute;
+    top: -43px;
+    left: 43px;
+    font-size: 40px;
+}
+
+.flight-wagon-body {
+    width: 190px;
+    height: 72px;
+    padding-top: 22px;
+    border: 5px solid #3a2421;
+    background-color: #9a5b27;
+    color: var(--candle-glow);
+    font-weight: bold;
+    text-align: center;
+}
+
+.flight-wheel {
+    position: absolute;
+    bottom: -22px;
+    width: 45px;
+    height: 45px;
+    border: 6px solid #2b1a16;
+    border-radius: 50%;
+    background-color: #68401f;
+}
+
+.flight-wheel-left {
+    left: 20px;
+}
+
+.flight-wheel-right {
+    right: 20px;
+}
+
+/* Ryan: Owls fly near the travelers. */
+.flight-owl {
+    position: absolute;
+    font-size: 40px;
+}
+
+.owl-one {
+    top: 0;
+    left: 45%;
+}
+
+.owl-two {
+    top: 75px;
+    left: 58%;
+    font-size: 32px;
+}
+
+/* Ryan: Spark trail behind the broom. */
+.flight-sparks {
+    position: absolute;
+    top: 92px;
+    left: 1%;
+    color: var(--candle-glow);
+    font-size: 22px;
+    letter-spacing: 12px;
+}
+
+/* Ryan: Keeps the Flight scene readable on small screens. */
+@media (max-width: 699px) {
+    .flight-message {
+        padding-top: 115px;
+    }
+
+    .flight-action {
+        right: 2%;
+        bottom: 115px;
+        max-width: 96%;
+        transform: scale(0.78);
+        transform-origin: bottom right;
+    }
+
+    .flight-witch {
+        left: 0;
+    }
+
+    .flight-wagon {
+        right: 0;
+    }
+}
+
+/* Ryan: Witch and wagon movement. */
+.flight-witch {
+    animation: witch-flight 6s ease-in-out infinite;
+}
+
+.flight-wagon {
+    animation: wagon-flight 7s ease-in-out infinite;
+}
+
+/* Ryan: The witch gently moves through the sky. */
+@keyframes witch-flight {
+    0%, 100% {
+        transform: translate(0, 0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translate(45px, -24px) rotate(2deg);
+    }
+}
+
+/* Ryan: The wagon follows with a slower floating motion. */
+@keyframes wagon-flight {
+    0%, 100% {
+        transform: translate(0, 0) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-35px, -18px) rotate(-2deg);
+    }
+}
+
+/* Ryan: Flight environment animations. */
+
+/* Ryan: Clouds move in opposite directions across the sky. */
+.flight-sky .cloud-one {
+    animation: cloud-move-right 14s linear infinite;
+}
+
+.flight-sky .cloud-two {
+    animation: cloud-move-left 18s linear infinite;
+}
+
+@keyframes cloud-move-right {
+    from {
+        transform: translateX(-180px);
+    }
+
+    to {
+        transform: translateX(85vw);
+    }
+}
+
+@keyframes cloud-move-left {
+    from {
+        transform: translateX(180px);
+    }
+
+    to {
+        transform: translateX(-85vw);
+    }
+}
+
+/* Ryan: Each owl follows a slightly different flight path. */
+.owl-one {
+    animation: owl-flight-one 4s ease-in-out infinite;
+}
+
+.owl-two {
+    animation: owl-flight-two 5s ease-in-out infinite;
+}
+
+@keyframes owl-flight-one {
+    0%, 100% {
+        transform: translate(0, 0) rotate(-4deg);
+    }
+
+    50% {
+        transform: translate(30px, -20px) rotate(4deg);
+    }
+}
+
+@keyframes owl-flight-two {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-25px, 16px);
+    }
+}
+
+/* Ryan: Sparks fade behind the witch's broom. */
+.flight-sparks span {
+    display: inline-block;
+    animation: spark-fade 1.2s ease-out infinite;
+}
+
+.flight-sparks span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.flight-sparks span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes spark-fade {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-35px, 18px) scale(0.4);
+    }
+}
+
+/* Ryan: Trees sit near the bottom of the Flight scene. */
+.flight-trees {
+    position: absolute;
+    z-index: 2;
+    bottom: 65px;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    pointer-events: none;
+}
+
+.flight-tree {
+    display: inline-block;
+    font-size: 82px;
+    transform-origin: bottom center;
+    animation: tree-sway 3s ease-in-out infinite;
+}
+
+.tree-two,
+.tree-four {
+    animation-delay: 0.8s;
+}
+
+.tree-two {
+    font-size: 66px;
+}
+
+.tree-three {
+    font-size: 92px;
+}
+
+@keyframes tree-sway {
+    0%, 100% {
+        transform: rotate(-2deg);
+    }
+
+    50% {
+        transform: rotate(3deg);
+    }
+}
+
+/* Ryan: Makes the trees smaller on phones. */
+@media (max-width: 699px) {
+    .flight-trees {
+        bottom: 55px;
+    }
+
+    .flight-tree {
+        font-size: 58px;
+    }
+
+    .tree-two {
+        font-size: 48px;
+    }
+
+    .tree-three {
+        font-size: 65px;
+    }
+}
+
+/* Ryan: Navigation and scene interactions. */
+
+/* Ryan: Navigation buttons respond to mouse and keyboard use. */
+.scene-nav a {
+    transition: background-color 0.25s ease,
+                color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.scene-nav a:hover {
+    transform: translateY(-3px);
+}
+
+.scene-nav a:focus-visible {
+    outline: 3px solid var(--candle-glow);
+    outline-offset: 4px;
+}
+
+/* Ryan: Shows which chapter is currently open. */
+body:not(:has(.scene:target)) .scene-nav a[href="#departure"],
+body:has(#departure:target) .scene-nav a[href="#departure"],
+body:has(#flight:target) .scene-nav a[href="#flight"],
+body:has(#arrival:target) .scene-nav a[href="#arrival"] {
+    background-color: var(--pumpkin);
+    color: var(--spider-black);
+}
+
+/* Ryan: Continue button at the bottom of the Flight scene. */
+.next-scene-link {
+    position: absolute;
+    z-index: 8;
+    bottom: 22px;
+    left: 50%;
+    min-height: 44px;
+    padding: 12px 18px;
+    border: 2px solid var(--candle-glow);
+    border-radius: 6px;
+    background-color: var(--spider-black);
+    color: var(--ghost-white);
+    text-decoration: none;
+    transform: translateX(-50%);
+    transition: background-color 0.25s ease,
+                color 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.next-scene-link:hover,
+.next-scene-link:focus {
+    background-color: var(--candle-glow);
+    color: var(--spider-black);
+    box-shadow: 0 0 18px var(--candle-glow);
+}
+
+.next-scene-link:focus-visible {
+    outline: 3px solid var(--ghost-white);
+    outline-offset: 4px;
+}
+
+/* Ryan: Small visual reactions inside the Flight scene. */
+.flight-witch:hover .witch-character,
+.flight-wagon:hover,
+.flight-owl:hover {
+    filter: drop-shadow(0 0 10px var(--candle-glow));
+}
+
+/* Ryan: Keeps the Continue button readable on phones. */
+@media (max-width: 699px) {
+    .next-scene-link {
+        bottom: 16px;
+        width: 82%;
+        text-align: center;
+    }
+}
